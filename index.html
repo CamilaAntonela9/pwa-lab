@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espenotes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3f51b5">
+
+</head>
+<body>
+  <h1>Espenotes</h1>
+
+  <textarea id="nota-input" placeholder="Escribe tu nota..."></textarea>
+  <button id="guardar-btn">Guardar Nota</button>
+
+  <div id="notas-container"></div>
+
+  <div id="snackbar">Nota guardada</div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.error('SW error:', err));
+    }
+  </script>
+</body>
+</html>
